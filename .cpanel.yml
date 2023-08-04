@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/devg9695/public_html/sia/git
+- /bin/cp -r * $DEPLOYPATH
