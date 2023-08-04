@@ -55,8 +55,8 @@ class PembayaranController extends Controller
      */
     public function update(UpdatePembayaranRequest $request, Pembayaran $pembayaran)
     {
-        $pembayaran->update($request->validates);
-        return PembayaranResource($pembayaran);
+        $pembayaran->update($request->validated());
+        return PembayaranResource::make($pembayaran);
     }
 
     /**
