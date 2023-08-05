@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\StoreNilaiRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateNilaiRequest extends FormRequest
+class UpdateNilaiRequest extends StoreNilaiRequest
 {
     /**
      * Determine if the user is authorized to make this request.

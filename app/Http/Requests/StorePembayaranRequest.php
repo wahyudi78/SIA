@@ -22,7 +22,7 @@ class StorePembayaranRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode'   => 'required',
+            'kode'   => 'required|unique:pembayarans',
             'nominal'   => 'required',
             'user'  => 'required',
             'waktu'    => 'required',

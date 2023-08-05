@@ -14,6 +14,15 @@ class NilaiResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id ,
+            'nilai' => $this->nilai ,
+            'waktu' => $this->waktu,
+            // 'guru' => new GuruResource($this->gurus),
+            'siswa' => new SiswaResource($this->siswa),
+            'guru' => new GuruResource($this->guru),
+            'ruang' => new RuanganResource($this->ruangan), 
+            'mapel' => new MapelResource($this->mapel)
+          ];
     }
 }

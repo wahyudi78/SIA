@@ -15,7 +15,7 @@ class NilaiController extends Controller
      */
     public function index()
     {
-        return NilaiResource::colection(Nilai::all());
+        return NilaiResource::collection(Nilai::all());
     }
 
     /**
@@ -40,7 +40,7 @@ class NilaiController extends Controller
      */
     public function show(Nilai $nilai)
     {
-        NilaiResource::make($nilai);
+       return NilaiResource::make($nilai);
     }
 
     /**

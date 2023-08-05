@@ -22,7 +22,7 @@ class StoreMapelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode'  => 'required',
+            'kode'  => 'required | unique:mapels',
             'mapel'  => 'required'
         ];
     }

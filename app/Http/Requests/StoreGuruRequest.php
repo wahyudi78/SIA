@@ -22,7 +22,7 @@ class StoreGuruRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nip'  => 'required',
+            'nip'  => 'required | unique:gurus',
             'nama'  => 'required',
             'alamat'  => 'required',
         ];

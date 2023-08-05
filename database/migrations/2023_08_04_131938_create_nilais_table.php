@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('nilais', function (Blueprint $table) {
             $table->id();
             $table->integer('nilai');
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('mapel_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('guru_id')->constrained()->cascadeOnDelete();
+            // $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            // $table->foreignId('mapel_id')->constrained()->cascadeOnDelete();
+            // $table->foreignId('guru_id')->constrained()->cascadeOnDelete();
             $table->datetime('waktu');
             $table->timestamps();
         });

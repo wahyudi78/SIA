@@ -20,7 +20,8 @@ class SiswaFactory extends Factory
             'nis'   => rand(0,10),
             'nama'  => fake()->sentence(),
             'alamat'    => fake()->address(),
-            'kelas' => rand(1,4)
+            'kelas' => rand(1,4),
+            'role' => 3
         ];
     }
 }

@@ -20,6 +20,7 @@ class PembayaranFactory extends Factory
             'kode'   => rand(1,10),
             'nominal'   => rand(1,10),
             'user'  => rand(1,10),
+            'guru'  => rand(1,10),
             'waktu'    => fake()->datetime(),
             'status'    => rand(1,3),
         ];

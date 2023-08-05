@@ -18,7 +18,8 @@ class GuruResource extends JsonResource
             'id' => $this->id ,
             'nip' => $this->nip ,
             'nama' => $this->nama ,
-            'alamat' => $this->alamat
+            'alamat' => $this->alamat,
+            'role' => $this->role,
           ];
     }
 }

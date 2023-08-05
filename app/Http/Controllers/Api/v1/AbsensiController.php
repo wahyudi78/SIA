@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\AbsensiResource;
 use App\Http\Requests\StoreAbsensiRequest;
 use App\Http\Requests\UpdateAbsensiRequest;
+ use App\Models\Obra;
 
 class AbsensiController extends Controller
 {
@@ -15,7 +16,11 @@ class AbsensiController extends Controller
      */
     public function index()
     {
-        return AbsensiResource::collection(Absensi::all());
+        // $absen = AbsensiResource::collewith('guru');
+        // $absen = Absen::with('gurus')->get()
+        // return AbsensiResource::collection(Absensi::with('guru')->get());
+        $absen = Absensi::with('guru')->get();
+        return AbsensiResource::collection($absen);
     }
 
     /**

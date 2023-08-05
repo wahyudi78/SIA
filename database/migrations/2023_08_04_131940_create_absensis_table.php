@@ -12,14 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('absensis', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            // $table->foreignId('guru')->references('id')->on('gurus')->onDelete('cascade');
+           
+            // $table->foreignId('ruang')->references('id')->on('ruangans')->onDelete('cascade');
+            // $table->foreignId('mapel')->references('id')->on('mapels')->onDelete('cascade');
             $table->integer('jenis');
             $table->datetime('waktu');
-            $table->integer('user');
             $table->timestamps();
         });
+       
     }
-
     /**
      * Reverse the migrations.
      */

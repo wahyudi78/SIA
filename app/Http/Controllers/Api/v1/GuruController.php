@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\GuruResource;
 use App\Http\Requests\StoreGuruRequest;
 use App\Http\Requests\UpdateGuruRequest;
+use App\Models\Obra;
+
 
 class GuruController extends Controller
 {

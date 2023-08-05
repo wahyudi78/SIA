@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('gurus', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nip')->unique();
+            $table->bigIncrements('id');
+            $table->integer('nip');
             $table->string('nama');
             $table->string('alamat');
+            $table->foreignId('role');
             $table->timestamps();
         });
     }
