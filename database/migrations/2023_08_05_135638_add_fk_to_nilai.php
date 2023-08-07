@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('nilais', function (Blueprint $table) {
-            $table->foreignId('siswa_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
-            $table->foreignId('guru_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
+            
             $table->foreignId('mapel_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
             $table->foreignId('ruangan_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
         });
@@ -25,10 +25,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('nilais', function (Blueprint $table) {
-            $table->dropForeign(['guru_id']);
-             $table->dropColumn(['guru_id']);
-             $table->dropForeign(['siswa_id']);
-             $table->dropColumn(['siswa_id']);
+
+             $table->dropForeign(['user_id']);
+             $table->dropColumn(['user_id']);
              $table->dropForeign(['mapel_id']);
              $table->dropColumn(['mapel_id']);
              $table->dropForeign(['ruangan_id']);

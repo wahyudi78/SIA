@@ -16,9 +16,9 @@ class AbsensiController extends Controller
      */
     public function index()
     {
-        // $absen = AbsensiResource::collewith('guru');
-        // $absen = Absen::with('gurus')->get()
-        // return AbsensiResource::collection(Absensi::with('guru')->get());
+       
+        // $this->authorize('viewAny');
+
         $absen = Absensi::with('guru')->get();
         return AbsensiResource::collection($absen);
     }

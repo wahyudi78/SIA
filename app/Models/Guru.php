@@ -15,5 +15,9 @@ class Guru extends Model
     {
         return $this->hasMany(Absensi::class);
     }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 
 }

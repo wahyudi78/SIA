@@ -13,7 +13,7 @@ class AbsensiPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        // return $user->role === 3;
     }
 
     /**
@@ -21,23 +21,26 @@ class AbsensiPolicy
      */
     public function view(User $user, Absensi $absensi): bool
     {
-        //
+        
+        return $user->id === $absensi->guru->id || $user->role === 1;
+        
+        
     }
 
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
-    {
-        //
-    }
+    // public function create(User $user): bool
+    // {
+    //     return $user->role === 2 || $user->role === 1;
+    // }
 
     /**
      * Determine whether the user can update the model.
      */
     public function update(User $user, Absensi $absensi): bool
     {
-        //
+        return $user->id === $absensi->guru->id || $user->role === 1;
     }
 
     /**
@@ -45,17 +48,13 @@ class AbsensiPolicy
      */
     public function delete(User $user, Absensi $absensi): bool
     {
-        //
+        return $user->id === $absensi->guru->id || $user->role === 1;
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Absensi $absensi): bool
-    {
-        //
-    }
-
+   
     /**
      * Determine whether the user can permanently delete the model.
      */

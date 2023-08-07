@@ -2,8 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\Pembayaran;
 use App\Models\User;
+use App\Models\Siswa;
+use App\Models\Pembayaran;
 use Illuminate\Auth\Access\Response;
 
 class PembayaranPolicy
@@ -11,9 +12,10 @@ class PembayaranPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(User $user, Pembayaran $pembayaran ): bool
     {
-        //
+        
+        // return 
     }
 
     /**
@@ -21,7 +23,15 @@ class PembayaranPolicy
      */
     public function view(User $user, Pembayaran $pembayaran): bool
     {
-        //
+        $users=[];
+        if($user->role == 3){
+            $users = Siswa::where('user_account', $user->id)->first();
+
+        }elseif($user->role == 2){
+            $users = Guru::where('user_account', $user->id)->first();
+        }
+
+        return $users->id === $pembayaran->siswa;
     }
 
     /**

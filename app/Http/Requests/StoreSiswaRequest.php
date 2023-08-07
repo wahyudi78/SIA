@@ -26,7 +26,8 @@ class StoreSiswaRequest extends FormRequest
             'nis'  => 'required',
             'nama'  => 'required',
             'alamat'  => 'required',
-            'kelas'  => 'required',
+            'role'  => 'required',
+            'user_account'  => 'required',
 
         ];
     }

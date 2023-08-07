@@ -19,8 +19,8 @@ class NilaiResource extends JsonResource
             'nilai' => $this->nilai ,
             'waktu' => $this->waktu,
             // 'guru' => new GuruResource($this->gurus),
-            'siswa' => new SiswaResource($this->siswa),
-            'guru' => new GuruResource($this->guru),
+            'siswa' => new UserResource($this->user),
+            
             'ruang' => new RuanganResource($this->ruangan), 
             'mapel' => new MapelResource($this->mapel)
           ];

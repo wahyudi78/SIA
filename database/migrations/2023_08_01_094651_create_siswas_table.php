@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->integer('kelas');
-            $table->foreignId('role');
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete()->after('id');
             $table->timestamps();
         });
     }
@@ -27,6 +27,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        $table->dropForeign(['user_id']);
+        $table->dropForeign(['user_id']);
         Schema::dropIfExists('siswas');
     }
 };

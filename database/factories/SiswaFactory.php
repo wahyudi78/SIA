@@ -21,7 +21,7 @@ class SiswaFactory extends Factory
             'nama'  => fake()->sentence(),
             'alamat'    => fake()->address(),
             'kelas' => rand(1,4),
-            'role' => 3
+            'user_id' => 3,
         ];
     }
 }

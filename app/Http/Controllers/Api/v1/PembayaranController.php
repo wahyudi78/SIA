@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Models\Pembayaran;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PembayaranResource;
 use App\Http\Requests\StorePembayaranRequest;
 use App\Http\Requests\UpdatePembayaranRequest;
 
@@ -39,7 +40,8 @@ class PembayaranController extends Controller
      */
     public function show(Pembayaran $pembayaran)
     {
-        PembayaranResource::make($pembayaran);
+        
+        return PembayaranResource::make($pembayaran);
     }
 
     /**

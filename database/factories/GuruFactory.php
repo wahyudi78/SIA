@@ -20,7 +20,7 @@ class GuruFactory extends Factory
             'nip'   => rand(0,100),
             'nama'  => fake()->sentence(),
             'alamat'    => fake()->address(),
-            'role'   => 2,
+            'user_id' => 3
         ];
     }
 }

@@ -11,7 +11,7 @@ class StorePembayaranRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class StorePembayaranRequest extends FormRequest
         return [
             'kode'   => 'required|unique:pembayarans',
             'nominal'   => 'required',
-            'user'  => 'required',
+            'user_id'  => 'required',
             'waktu'    => 'required',
             'status'    => 'required',
         ];

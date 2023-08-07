@@ -14,6 +14,13 @@ class PembayaranResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id ,
+            'kode' => $this->kode ,
+            'nominal' => $this->nominal ,
+            'siswa' => new UserResource($this->user),
+            'waktu' => $this->waktu,
+            'status' => $this->status
+          ];
     }
 }

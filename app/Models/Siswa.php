@@ -14,4 +14,13 @@ class Siswa extends Model
     {
         return $this->hasMany(Nilai::class);
     }
+
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class);
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

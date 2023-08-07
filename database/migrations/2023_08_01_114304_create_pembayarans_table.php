@@ -12,11 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembayarans', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('kode');
             $table->integer('nominal');
-            $table->foreignId('user');
-            $table->foreignId('guru');
             $table->datetime('waktu');
             $table->integer('status');
             $table->timestamps();

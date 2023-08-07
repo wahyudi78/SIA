@@ -25,6 +25,8 @@ class StoreGuruRequest extends FormRequest
             'nip'  => 'required | unique:gurus',
             'nama'  => 'required',
             'alamat'  => 'required',
+            'user_account'  => 'required',
+            'role'  => 'required',
         ];
     }
 }

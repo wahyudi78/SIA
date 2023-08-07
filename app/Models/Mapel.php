@@ -18,4 +18,8 @@ class Mapel extends Model
     {
         return $this->hasMany(Nilai::class);
     }
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }
